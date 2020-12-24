@@ -1,0 +1,29 @@
+posts:
+  - file:   monotonic-rdfs.md
+    title:  Using monotonic tabling for RDFS entailment reasoning
+    date:   2020-11-24
+    author: Jan Wielemaker
+    tags:   [ rdfs, entailment, reasoning, tabling, monotonic ]
+    summary: |
+       Tabling can be used to define RDFS entailment reasoning
+       really cleanly.  Monotonic tabling provides efficient updates
+       if RDF triples are added.
+
+  - file:    tabling-for-blackboard.md
+    title:   Using tabling to reason about a changing world
+    date:    2020-12-24
+    author:  Jan Wielemaker
+    tags:    [ dynamic, tabling, incremental, transactions ]
+    summary: |
+      What options are available to reason efficiently over a changing
+      world?
+
+  - file:   solutions.md
+    title:  SWI-Prolog Solutions b.v.
+    date:   2020-12-01
+    author: Jan Wielemaker
+    tags:   [ commercial, training, support, consultancy, development ]
+    summary: |
+      Prolog Solutions b.v. was founded September 2020 and provides professional
+      services for SWI-Prolog.
+
