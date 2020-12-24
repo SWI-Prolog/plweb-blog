@@ -73,7 +73,7 @@ because _tabled evaluation_ watches for goals that are being evaluated
 that are a _variant_ (equivalent goal after variable renaming) of the
 current goal. In that scenario it effectively reverts to _bottom up_
 evaluation while it only propagates _new_ answers. This provides
-termination warants similar to Datalog: any program with a finite
+termination warrants similar to Datalog: any program with a finite
 Herbrand universe terminates.
 
 SWI-Prolog's innovation is in the option "_as_ __monotonic__". Given
@@ -138,7 +138,9 @@ efficient "what if" reasoning: add some rdf/3 facts inside the
 transaction, examine the entailed graph for certain properties and
 decide to _commit_ or _roll back_.
 
-Monotonic tables may be __watched for new answers__.   The low-level mechanism using prolog_listen/3 is present.  A more robust and simpler to use interface is under consideration.
+Monotonic tables may be __watched for new answers__. The low-level
+mechanism using prolog_listen/3 is present. A more robust and simpler to
+use interface is under consideration.
 
 ## Conclusions
 
