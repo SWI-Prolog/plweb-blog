@@ -1,4 +1,4 @@
-# Using tabling to reason about a a changing world
+# Using tabling to reason about a changing world
 
 Intelligent agents often have to reason about a changing world.
 Reasoning about a changing world is a form of _stream reasoning_. A
@@ -41,7 +41,7 @@ S. Warren for their help advancing SWI-Prolog's tabling.
     tables are _invalidated_ if the dynamic predicate changes and lazily
     re-evaluated when needed.  If an intermediate node in this dependency
     graph evaluates to the old result, dependent tables are marked as valid
-    again without recompution.  This feature is shared with XSB Prolog.
+    again without recomputation.  This feature is shared with XSB Prolog.
   - __Monotonic tabling__ deals efficiently with adding new clauses to
     dynamic predicates, provided the dependency is _monotomic_.  This turns
     quadratic update times into linear behavior.  It is unique to SWI-Prolog.
@@ -62,7 +62,7 @@ with this.
 
 The most obvious solution is to use threads: fully concurrent Prolog
 engines that run on a same shared Prolog database. With low-cost IoT
-hardware such as the Rasberry-Pi having multiple cores, threads are
+hardware such as the Raspberry-Pi having multiple cores, threads are
 attractive. Unfortunately, dealing with the dependencies is complicated
 and error-prone. For this reason, and notably when the threads are
 heavily mutually dependent and not particularly CPU intensive, threads
@@ -145,13 +145,13 @@ update_temp(Temp) :-
 ```
 
 If we do the database update asynchronously with the reasoners, i.e., in
-a separete thread, the reasoner may find itself in a situation where no
+a separate thread, the reasoner may find itself in a situation where no
 temperature is known. We can adjust the code to first add the new
-temperature and them remove the old. The presense of two temperature
+temperature and them remove the old. The presence of two temperature
 facts may upset the reasoner as well though.
 
 What to do? If we use the _cooperative multitasking_ approach based on
-engines or delimited continutions there is no problem as the main thread
+engines or delimited continuations there is no problem as the main thread
 will read events from the input and handle them. As nothing runs
 concurrently, this works fine.
 
@@ -176,12 +176,12 @@ made inside the snapshot are invisible to other threads.
 ## Summarizing
 
 SWI-Prolog offers a large set of primitives to deal with a changing
-world. Tabling allows for truely declarative reasoning with minimal
+world. Tabling allows for truly declarative reasoning with minimal
 recomputation after updates to the world as well as sharing derivations
 between threads. Delimited continuations and engines allow for event
 driven reasoning over multiple concurrent tasks in a single thread based
 on _cooperative multitasking_. Transactions and snapshots allow for
-truely concurrent reasoning. Concurrent reasoning profits from
+truly concurrent reasoning. Concurrent reasoning profits from
 multi-core hardware and is insensitive to tasks that hold the CPU,
 providing more reactive systems. SWI-Prolog allows combining the two
 approaches in one process.
