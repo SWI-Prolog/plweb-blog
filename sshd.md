@@ -11,7 +11,7 @@ If you are lucky, the log output gives a clue or produces enough
 information to make an educated guess on how to trigger the same issue
 while running the same service interactively on your development
 machine. Then you can fix the software, upload it to the server machine
-and use `systemctl restart myservice` to activate the patched version.
+and use ``systemctl restart myservice`` to activate the patched version.
 The only price paid is a short down time for the restart. The effect of
 this may vary from zero impact if there are redundant services to a
 serious down time if there is no redundancy and the start time is long.
@@ -33,7 +33,7 @@ source files.  We can use that for two purposes:
         :- debug(mytopic).
 
   - After we patched the sources locally or using the scenario
-    above, use `systemctl reload myservice` to restart without
+    above, use ``systemctl reload myservice`` to restart without
     downtime.
 
 This may get clumsy though, in particular if we want to examine some
@@ -67,7 +67,7 @@ history and color output.  This implies
   - We can kill a thread misbehaves using thread_signal/2 sending
     abort/0 as signal.
   - We can easily reload modified sources using make/0 doing the
-    same as the above `systemctl reload myservice` in a bit more
+    same as the above ``systemctl reload myservice`` in a bit more
     friendly way.
   - We can (de-)activate debug/3 statements by calling debug/1.
   - ... and much more ...
