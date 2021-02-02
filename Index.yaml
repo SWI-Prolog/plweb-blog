@@ -27,3 +27,11 @@ posts:
       What options are available to reason efficiently over a changing
       world?
 
+  - file:    sshd.md
+    title:   Using SSH to debug services and embedded Prolog
+    date:    2021-02-02
+    author:  Jan Wielemaker
+    tags:    [ ssh, debugging, remote ]
+    summary: |
+      How to install and use the `libssh` pack to debug and maintain
+      Prolog processes that are not started interactively.
