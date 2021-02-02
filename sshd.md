@@ -64,7 +64,7 @@ history and color output.  This implies
     this environment as precisely as possible.  This may be costly
     or impossible though.
   - We can examine threads using threads/0 or tbacktrace/1.
-  - We can kill a thread misbehaves using thread_signal/1 sending
+  - We can kill a thread misbehaves using thread_signal/2 sending
     abort/0 as signal.
   - We can easily reload modified sources using make/0 doing the
     same as the above `systemctl reload myservice` in a bit more
