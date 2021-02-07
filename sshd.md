@@ -25,7 +25,7 @@ If the service was started with
 the default is to handle `SIGHUP` to run make/0 to reload modified
 source files.  We can use that for two purposes:
 
-  - If the log files do not provide suficient detail, add debug/3
+  - If the log files do not provide sufficient detail, add debug/3
     statements to the code and run `systemctl reload myservice`
     to get more detailed information.  Do not forget to activate
     the debug topic by adding this to the modified source file
