@@ -134,7 +134,7 @@ loop(Pending) :-
 ### Dealing with a changing world
 
 Representing the world as a set of dynamic predicate poses problems. For
-example, a predicate temperature/1 representing the current ambient
+example, a predicate ``temperature/1`` representing the current ambient
 temperature must be updated using a retractall/1 to remove the current
 temperature followed by an asserta/1 to record the new temperature:
 
@@ -161,8 +161,8 @@ threads far less useful as a slow reasoner may block updates and
 withhold urgent reasoners from notifying a change to the world. A second
 alternative is to use transaction/1. This allows a number of database
 changes to become available to the global Prolog database _atomically_.
-For example, wrapping update_temp/1 in transaction/1 ensures any thread
-will see exactly one temperature at any point in time.
+For example, wrapping ``update_temp/1`` in transaction/1 ensures any
+thread will see exactly one temperature at any point in time.
 
 A reasoner asking for the temperature multiple times during its
 reasoning process may, despite the use of transaction/1, get different

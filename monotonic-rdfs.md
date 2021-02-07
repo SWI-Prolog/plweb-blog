@@ -68,7 +68,7 @@ of the file):
     :- dynamic rdf/3 as monotonic.
 
 If we now add some rdf/3 triples to the database and ask for the
-entailed graph by querying rdfs/3 everything works by magic. This is
+entailed graph by querying ``rdfs/3`` everything works by magic. This is
 because _tabled evaluation_ watches for goals that are being evaluated
 that are a _variant_ (equivalent goal after variable renaming) of the
 current goal. In that scenario it effectively reverts to _bottom up_
@@ -103,7 +103,7 @@ compile time (again, add above the rules):
 
 I've carried out a small experiment using the
 [AAT](https://www.getty.edu/research/tools/vocabularies/aat/) as RDF
-data (286,227 triples). First, we run rdfs/3, initializing the
+data (286,227 triples). First, we run ``rdfs/3``, initializing the
 dependencies. Note that this has no solutions as there are no triples in
 our database.
 
@@ -115,16 +115,17 @@ Now we add our triples after reading them from RDF/XML:
     ?- load_rdf('aat.rdf', Triples), time(maplist(assertz, Triples)).
     % 37,971,687 inferences, 6.301 CPU in 6.333 seconds (99% CPU, 6026215 Lips)
 
-This results in 502,117 rdfs/3 answers.   Now we can load the AAT schema:
+This results in 502,117 ``rdfs/3`` answers. Now we can load the AAT
+schema:
 
     ?- load_rdf('aat.rdfs', Triples), time(maplist(assertz, Triples)).
     % 12,198,444 inferences, 1.490 CPU in 1.491 seconds (100% CPU, 8185847 Lips)
 
-Raising the number of rdfs/3 edges to 664,950. The memory used by Prolog
-after these steps is 766Mbytes.
+Raising the number of ``rdfs/3`` edges to 664,950. The memory used by
+Prolog after these steps is 766Mbytes.
 
 If we reverse the order, first loading all rdf/3 data and then calling
-rdfs/3 to compute the entailment, the loading time is 0.7 seconds and
+``rdfs/3`` to compute the entailment, the loading time is 0.7 seconds and
 the inference time is 4.9 seconds, resulting in the same 664,950 edges.
 __Batch computing is only 40% faster than incremental maintenance__!.
 
